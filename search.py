@@ -3,8 +3,7 @@ from BeautifulSoup import BeautifulSoup
 
 search = twitter_search()
 
-result = search.return_map_search("arsenal", "1")
+for i in range (1,16):
+  search.search_to_file("arsenal",str(i),"output.txt" )
 
-for tweet in result:
-  tweet_t = BeautifulSoup(tweet["text"]) 
-  print "***",tweet_t, "\n"
+
