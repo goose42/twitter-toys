@@ -47,10 +47,10 @@ class twitter_search:
     return_json = urllib.urlopen(self.twitter_url+query+"&rpp="+str(self.res_pp) 
     +"&page="+page_num+"&lang="+self.lang+"&result_type=recent")
     return_map = json.loads(return_json.read())
-    f = open(file_name,"w")
+    f = open(file_name,"a")
     for tweet in return_map["results"]:
       tweet_text = BeautifulSoup(tweet["text"])
-      print "**"+tweet_text.string
+      #print "**"+tweet_text.string
       f.write(tweet_text.string.encode('utf-8'))
       f.write("\n")
     f.close()
