@@ -41,6 +41,13 @@ for x in search_string.split():
   y = "#" + x
   words_to_ignore.append(y)
 
+with open ("filter_words.txt") as filter_file:
+  filterwords = filter_file.readlines()
+
+for filter_word in filterwords:
+  words_to_ignore = words_to_ignore + filter_word.split()
+
+
 word_counter = {}
 filtered_word_counter = {}
 with open (output_file) as f:
@@ -58,7 +65,7 @@ for line in lines:
           word_counter[word_low] = 1
 
 for item in word_counter:
-  if word_counter[item] > 2:
+  if word_counter[item] > 1:
     filtered_word_counter[item] = word_counter[item]
     
 ordered_word_count = OrderedDict(sorted(filtered_word_counter.items(), key=lambda x: x[1]))    
