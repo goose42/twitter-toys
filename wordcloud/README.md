@@ -4,10 +4,12 @@
 <br>
 **Usage:**<br>
   Once you download this folder, run the following:
-  <br>>python word_cloud.py<br>
+  <br><br>
+  *python word_cloud.py
+  <br><br>
   You will be prompted for a query sting. This string will be used to search <br> 
   twitter for the most recent tweets.<br> 
-  The word cloud will be created as a png file, with the name output<timestamp>.png<br>
+  A word cloud will be created from these tweets as a png file, with the name output<timestamp>.png<br>
 
 
 <br><br>
